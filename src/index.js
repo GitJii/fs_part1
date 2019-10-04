@@ -59,11 +59,11 @@ const App = () => {
 
 const Course = ({ kurssi }) => {
     return (
-        <div>
+        <>
             <Header nimi={kurssi.name} />
             <Content course={kurssi} />
             <Total parts={kurssi.parts} />
-        </div>
+        </>
     )
 }
 
@@ -77,9 +77,8 @@ const Content = ({ course }) => {
     const t = course.parts
     return (
         t.map(osa =>
-            <div>
-                <Part key={osa.id} nimi={osa.name} harjoituksia={osa.exercises} />
-            </div>)
+            <Part key={osa.id} nimi={osa.name} harjoituksia={osa.exercises} />
+        )
     )
 }
 
